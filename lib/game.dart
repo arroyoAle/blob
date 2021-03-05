@@ -26,7 +26,6 @@ class _gameState extends State<game> {
             height: displayHeight(context) / 2,
             child: card(),
           ),)
-
       ],),
     )
     ;

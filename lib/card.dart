@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:playing_cards/playing_cards.dart';
 import 'package:blob/util.dart';
 import 'dart:math';
+import 'package:flip_card/flip_card.dart';
 
 class card extends StatefulWidget {
   @override
@@ -61,9 +62,12 @@ class _cardState extends State<card> {
     Suit suit;
     CardValue value;
     PlayingCardView checker;
+    List<PlayingCard> deck = standardFiftyTwoCardDeck();
     for(var i = 0; i < 7; i++){
-      suit = Suit.values[Random().nextInt(Suit.values.length)];
-      value = CardValue.values[Random().nextInt(CardValue.values.length)];
+      var index = Random().nextInt(deck.length);
+      suit = deck[index].suit;
+      value = deck[index].value;
+      deck.removeAt(index);
       checker = PlayingCardView(
         card: PlayingCard(suit, value),
         showBack: false,
@@ -71,25 +75,20 @@ class _cardState extends State<card> {
         shape: shape,
         style: myStyle,
       );
-
-      if (children.contains(checker)){
-        i--;
-      } else {
         children.add(new PlayingCardView(
           card: PlayingCard(suit, value),
           showBack: false,
           elevation: 3.0,
           shape: shape,
           style: myStyle,
-        ));
-      }
+          ),
+        );
     }
   debugPrint(children[0].toStringShort());
 
-
     return FlatCardFan(
         children: children
-    );
+      ,);
 
 
     // return Scaffold(
