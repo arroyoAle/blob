@@ -26,27 +26,84 @@ class _gameState extends State<game> {
   List<PlayingCard> played = [];
 
   @override
+  void _initState(){
+    super.initState();
+    _initGame();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
-      alignment: Alignment.bottomCenter,
-      child: new Stack(
-        children: <Widget>[
-          Positioned(
-            top: displayHeight(context) / 1.25,
-            left: displayWidth(context) / 2 - displayWidth(context) / 4,
-            child: new Container(
-            alignment: Alignment.center,
-            width: displayWidth(context) / 2,
-            height: displayHeight(context) / 2,
-            child: card(),
-          ),)
-      ],),
-    )
-    ;
+    return Scaffold(
+      backgroundColor: Colors.green,
+      appBar: AppBar(
+        title: Text("BLOB"),
+        elevation: 0.0,
+        backgroundColor: Colors.green,
+        actions: <Widget>[
+          InkWell(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0)
+            ),
+            splashColor: Colors.white,
+            onTap: () {
+              _initGame();
+            }
+            ,
+          ),
+        ],
+      ),
+    );
   }
 
   noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+
+  void _initGame() {
+    //Number of rounds
+    var round = 7;
+    var noPlayers = 4;
+
+    //init player hands
+    player1Hand = [];
+    player2Hand = [];
+    player3Hand = [];
+    player4Hand = [];
+    player5Hand = [];
+    player6Hand = [];
+
+    played = [];
+
+    Random rand = Random();
+    List<PlayingCard> deck = [];
+    CardSuit.values.forEach((suit) {
+      CardType.values.forEach((type) {
+        deck.add(PlayingCard(
+          cardType: type,
+          cardSuit: suit,
+          faceUp: false,
+        ));
+      });
+    });
+    for (int i = 0; i < round * noPlayers; i++) {
+      int randNum = rand.nextInt(deck.length);
+      if (noPlayers == 3){
+        if (i % noPlayers == 0){
+          PlayingCard card = deck[randNum];
+          player1Hand.add(
+            card
+            ..opened = true
+              ..faceUp = true,
+          );
+        }
+      } else if(noPlayers == 4){
+
+      } else if(noPlayers == 5){
+
+      } else if(noPlayers == 6){
+
+      }
+    }
+
+  }
 }
 
 class playArea extends StatefulWidget {
@@ -59,35 +116,4 @@ class _playAreaState extends State<playArea> {
   Widget build(BuildContext context) {
     return Container();
   }
-}
-
-void _initGame() {
-  //Number of rounds
-  var round = 7;
-  var noPlayers = 4;
-
-  Random rand = Random();
-  List<PlayingCard> deck = [];
-  CardSuit.values.forEach((suit) {
-    CardType.values.forEach((type) {
-      deck.add(PlayingCard(
-        cardType: type,
-        cardSuit: suit,
-        faceUp: false,
-      ));
-    });
-  });
-  for (int i = 0; i < round * noPlayers; i++) {
-    int randNum = rand.nextInt(deck.length);
-    if (noPlayers == 3){
-
-    } else if(noPlayers == 4){
-
-    } else if(noPlayers == 5){
-
-    } else if(noPlayers == 6){
-
-    }
-  }
-
 }

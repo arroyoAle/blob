@@ -20,9 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="455f980d-0332-4eff-9df1-1bcba48bf259" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/deal.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/card.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/game.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/game.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,10 +137,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1614969600516" />
-    <state x="660" y="252" key="run.anything.popup" timestamp="1614971202668">
+    <state x="660" y="252" key="run.anything.popup" timestamp="1614975457562">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1614971202668" />
+    <state x="660" y="252" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1614975457562" />
     <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1614974619448">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
