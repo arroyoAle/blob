@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:playing_cards/playing_cards.dart';
 import 'package:blob/util.dart';
+import 'package:blob/cards.dart';
 import 'dart:math';
 import 'package:flip_card/flip_card.dart';
 
@@ -61,20 +62,13 @@ class _cardState extends State<card> {
     final children = <PlayingCardView>[];
     Suit suit;
     CardValue value;
-    PlayingCardView checker;
+    var noCards = 7;
     List<PlayingCard> deck = standardFiftyTwoCardDeck();
-    for(var i = 0; i < 7; i++){
+    for(var i = 0; i < noCards; i++){
       var index = Random().nextInt(deck.length);
       suit = deck[index].suit;
       value = deck[index].value;
       deck.removeAt(index);
-      checker = PlayingCardView(
-        card: PlayingCard(suit, value),
-        showBack: false,
-        elevation: 3.0,
-        shape: shape,
-        style: myStyle,
-      );
         children.add(new PlayingCardView(
           card: PlayingCard(suit, value),
           showBack: false,
@@ -84,11 +78,33 @@ class _cardState extends State<card> {
           ),
         );
     }
-  debugPrint(children[0].toStringShort());
+    return GestureDetector(
+      onTap: () {
+        if(children[1].showBack == false) {
+          children[1] = PlayingCardView(
+            card: children[1].card,
+            showBack: true,
+            elevation: 3.0,
+            shape: shape,
+            style: myStyle,
+          );
+        } else {
+          children[1] = PlayingCardView(
+            card: children[1].card,
+            showBack: false,
+            elevation: 3.0,
+            shape: shape,
+            style: myStyle,
+          );
+        }
+        },
 
-    return FlatCardFan(
+      child: FlatCardFan(
         children: children
-      ,);
+        ,),
+    );
+
+
 
 
     // return Scaffold(

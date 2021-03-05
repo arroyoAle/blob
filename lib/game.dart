@@ -31,3 +31,15 @@ class _gameState extends State<game> {
     ;
   }
 }
+
+class playArea extends StatefulWidget {
+  @override
+  _playAreaState createState() => _playAreaState();
+}
+
+class _playAreaState extends State<playArea> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
