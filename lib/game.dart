@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:blob/cards.dart';
+import 'package:blob/hands.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:blob/util.dart';
@@ -47,11 +48,22 @@ class _gameState extends State<game> {
             splashColor: Colors.white,
             onTap: () {
               _initGame();
-            }
-            ,
+            },
           ),
         ],
       ),
+      body: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Expanded(child: cardHand(
+                _buildPlayedDeck();
+              ))
+            ],
+          )
+        ],
+      )
     );
   }
 
@@ -60,7 +72,7 @@ class _gameState extends State<game> {
   void _initGame() {
     //Number of rounds
     var round = 7;
-    var noPlayers = 4;
+    var noPlayers = 3;
 
     //init player hands
     player1Hand = [];
@@ -69,7 +81,6 @@ class _gameState extends State<game> {
     player4Hand = [];
     player5Hand = [];
     player6Hand = [];
-
     played = [];
 
     Random rand = Random();
@@ -86,14 +97,34 @@ class _gameState extends State<game> {
     for (int i = 0; i < round * noPlayers; i++) {
       int randNum = rand.nextInt(deck.length);
       if (noPlayers == 3){
-        if (i % noPlayers == 0){
+        if (i % noPlayers == 0) {
+          PlayingCard card = deck[randNum];
+          player3Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 1) {
+          PlayingCard card = deck[randNum];
+          player2Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 1) {
           PlayingCard card = deck[randNum];
           player1Hand.add(
             card
-            ..opened = true
+              ..opened = true
               ..faceUp = true,
           );
+          deck.removeAt(randNum);
         }
+
       } else if(noPlayers == 4){
 
       } else if(noPlayers == 5){
@@ -104,6 +135,8 @@ class _gameState extends State<game> {
     }
 
   }
+
+
 }
 
 class playArea extends StatefulWidget {

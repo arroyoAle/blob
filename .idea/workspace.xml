@@ -20,14 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="455f980d-0332-4eff-9df1-1bcba48bf259" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/deal.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/game.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/game.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[98161FFAZ003EX]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -52,7 +55,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../project_one" />
-    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="settings.editor.selected.configurable" value="emulator" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -108,6 +111,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="591" y="197" width="800" height="719" key="#Plugins/72.27.1848.1053@72.27.1848.1053" timestamp="1614937783998" />
+    <state x="610" y="268" width="762" height="578" key="#main.dart" timestamp="1615149679762">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="610" y="268" width="762" height="578" key="#main.dart/72.27.1848.1053@72.27.1848.1053" timestamp="1615149679762" />
     <state x="777" y="301" width="428" height="512" key="AndroidProcessChooserDialog" timestamp="1614893201652">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -132,10 +139,14 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1802" height="234" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1615043031927" />
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1614969600516">
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1615151568654">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1614969600516" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1615151568654" />
+    <state x="767" y="468" width="458" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1615213887562">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="767" y="468" width="458" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/72.27.1848.1053@72.27.1848.1053" timestamp="1615213887562" />
     <state x="660" y="252" key="run.anything.popup" timestamp="1614975457562">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
