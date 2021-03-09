@@ -58,13 +58,17 @@ class _gameState extends State<game> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(child: cardHand(
-                _buildPlayedDeck();
+                // _buildPlayedDeck();
               ))
             ],
           )
         ],
       )
     );
+  }
+
+  Widget _buildPlayedDeck(){
+
   }
 
   noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);

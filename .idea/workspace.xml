@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="455f980d-0332-4eff-9df1-1bcba48bf259" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/transformed_card.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/game.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/game.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/hands.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/hands.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
