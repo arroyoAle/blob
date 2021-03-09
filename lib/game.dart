@@ -97,6 +97,7 @@ class _gameState extends State<game> {
     for (int i = 0; i < round * noPlayers; i++) {
       int randNum = rand.nextInt(deck.length);
       if (noPlayers == 3){
+
         if (i % noPlayers == 0) {
           PlayingCard card = deck[randNum];
           player3Hand.add(
@@ -115,7 +116,7 @@ class _gameState extends State<game> {
           );
           deck.removeAt(randNum);
         }
-        if (i % noPlayers == 1) {
+        if (i % noPlayers == 2) {
           PlayingCard card = deck[randNum];
           player1Hand.add(
             card
@@ -127,9 +128,147 @@ class _gameState extends State<game> {
 
       } else if(noPlayers == 4){
 
+        if (i % noPlayers == 0) {
+          PlayingCard card = deck[randNum];
+          player4Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 1) {
+          PlayingCard card = deck[randNum];
+          player3Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 2) {
+          PlayingCard card = deck[randNum];
+          player2Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 3) {
+          PlayingCard card = deck[randNum];
+          player1Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+
       } else if(noPlayers == 5){
 
+        if (i % noPlayers == 0) {
+          PlayingCard card = deck[randNum];
+          player5Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 1) {
+          PlayingCard card = deck[randNum];
+          player4Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 2) {
+          PlayingCard card = deck[randNum];
+          player3Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 3) {
+          PlayingCard card = deck[randNum];
+          player2Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 4) {
+          PlayingCard card = deck[randNum];
+          player1Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+
       } else if(noPlayers == 6){
+
+        if (i % noPlayers == 0) {
+          PlayingCard card = deck[randNum];
+          player6Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 1) {
+          PlayingCard card = deck[randNum];
+          player5Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 2) {
+          PlayingCard card = deck[randNum];
+          player4Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 3) {
+          PlayingCard card = deck[randNum];
+          player3Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 4) {
+          PlayingCard card = deck[randNum];
+          player2Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
+        if (i % noPlayers == 5) {
+          PlayingCard card = deck[randNum];
+          player1Hand.add(
+            card
+              ..opened = true
+              ..faceUp = true,
+          );
+          deck.removeAt(randNum);
+        }
 
       }
     }
