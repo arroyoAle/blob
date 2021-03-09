@@ -1,6 +1,7 @@
 import 'package:blob/card.dart';
 import 'package:blob/cards.dart';
 import 'package:flutter/material.dart';
+import 'package:blob/transformed_card.dart';
 
 typedef Null CardAcceptCallback(List<PlayingCard> card, int fromIndex);
 
@@ -38,8 +39,7 @@ class _cardHandState extends State<cardHand> {
               return TransformedCard(
                 playingCard: card,
                 transformIndex: index,
-                attachedCards: widget.cards.sublist(index, widget.cards.length),
-                columnIndex: widget.handIndex,
+                handIndex: widget.handIndex,
               );
             }).toList(),
           );

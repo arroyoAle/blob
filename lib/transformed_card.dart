@@ -3,14 +3,14 @@ import 'package:blob/hands.dart';
 import 'package:blob/cards.dart';
 
 class TransformedCard extends StatefulWidget {
-  PlayingCard card;
-  double transformDistance;
-  int transformIndex;
-  int handIndex;
-  List<PlayingCard> playedCards;
+  final PlayingCard playingCard;
+  final double transformDistance;
+  final int transformIndex;
+  final int handIndex;
+  final List<PlayingCard> playedCards;
 
   TransformedCard({
-    @required this.card,
+    @required this.playingCard,
     this.transformDistance = 15.0,
     this.transformIndex = 0,
     this.handIndex,
