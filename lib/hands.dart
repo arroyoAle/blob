@@ -35,51 +35,26 @@ class _cardHandState extends State<cardHand> {
           return Stack(
             children: widget.cards.map((card) {
               int index = widget.cards.indexOf(card);
-              // return TransformedCard(
-              //   playingCard: card,
-              //   transformIndex: index,
-              //   attachedCards: widget.cards.sublist(index, widget.cards.length),
-              //   columnIndex: widget.columnIndex,
-              // );
+              return TransformedCard(
+                playingCard: card,
+                transformIndex: index,
+                attachedCards: widget.cards.sublist(index, widget.cards.length),
+                columnIndex: widget.handIndex,
+              );
             }).toList(),
           );
         },
-        // onWillAccept: (value) {
-        //   // If empty, accept
-        //   if (widget.cards.length == 0) {
-        //     return true;
-        //   }
-        //
-        //   // Get dragged cards list
-        //   List<PlayingCard> draggedCards = value["cards"];
-        //   PlayingCard firstCard = draggedCards.first;
-        //   if (firstCard.cardColor == CardColor.red) {
-        //     if (widget.cards.last.cardColor == CardColor.red) {
-        //       return false;
-        //     }
-        //
-        //     int lastColumnCardIndex = CardType.values.indexOf(widget.cards.last.cardType);
-        //     int firstDraggedCardIndex = CardType.values.indexOf(firstCard.cardType);
-        //
-        //     if(lastColumnCardIndex != firstDraggedCardIndex + 1) {
-        //       return false;
-        //     }
-        //
-        //   } else {
-        //     if (widget.cards.last.cardColor == CardColor.black) {
-        //       return false;
-        //     }
-        //
-        //     int lastColumnCardIndex = CardType.values.indexOf(widget.cards.last.cardType);
-        //     int firstDraggedCardIndex = CardType.values.indexOf(firstCard.cardType);
-        //
-        //     if(lastColumnCardIndex != firstDraggedCardIndex + 1) {
-        //       return false;
-        //     }
-        //
-        //   }
-        //   return true;
-        // },
+        onWillAccept: (value) {
+          // If empty, accept
+          if (widget.cards.length == 0) {
+            return true;
+          }
+
+          // Get dragged cards list
+          List<PlayingCard> draggedCards = value["cards"];
+          PlayingCard firstCard = draggedCards.first;
+          return true;
+        },
         onAccept: (value) {
           widget.onCardsAdded(
             value["cards"],
