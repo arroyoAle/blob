@@ -1,6 +1,8 @@
 # blob
 
-The godly game of BLOB :)
+The godly game of BLOB, which belongs to yungGiggeto (aka chessDisciple, aka blobreverser), and yungGod (aka milameister, aka chessgod) :)
+
+
 
 ## Getting Started
 

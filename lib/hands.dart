@@ -7,11 +7,11 @@ typedef Null CardAcceptCallback(List<PlayingCard> card, int fromIndex);
 
 class cardHand extends StatefulWidget {
 
-  List<PlayingCard> cards;
+  final List<PlayingCard> cards;
 
-  CardAcceptCallback onCardsAdded;
+  final CardAcceptCallback onCardsAdded;
 
-  int handIndex;
+  final int handIndex;
 
   cardHand({
     @required this.cards,

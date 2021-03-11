@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'game.dart';
+import 'blcgame.dart';
 
 
 void main() {
@@ -11,11 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'BLOB',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: game(),
+      //home: game(),
+      home: HomePage(),
       // home: MyHomePage(title: 'Card Package Test'),
     );
   }

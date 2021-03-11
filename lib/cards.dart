@@ -8,7 +8,7 @@ enum CardSuit {
 }
 
 enum CardType {
-  one,
+  ace,
   two,
   three,
   four,
@@ -21,6 +21,11 @@ enum CardType {
   jack,
   queen,
   king
+}
+
+enum CardColor{
+  red,
+  black,
 }
 
 
@@ -37,4 +42,12 @@ class PlayingCard {
     this.faceUp = false,
     this.opened = false,
   });
+
+  CardColor get cardColor {
+    if(cardSuit == CardSuit.hearts || cardSuit == CardSuit.diamonds) {
+      return CardColor.red;
+    } else {
+      return CardColor.black;
+    }
+  }
 }

@@ -43,7 +43,7 @@ class _gameState extends State<game> {
         actions: <Widget>[
           InkWell(
             child: Padding(
-              padding: const EdgeInsets.all(8.0)
+              padding: const EdgeInsets.all(8.0),
             ),
             splashColor: Colors.white,
             onTap: () {
@@ -52,23 +52,29 @@ class _gameState extends State<game> {
           ),
         ],
       ),
-      body: Column(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(child: cardHand(
-                // _buildPlayedDeck();
-              ))
-            ],
-          )
-        ],
+      body: Container(
+          padding: const EdgeInsets.all(8.0),
+          height: 500.0,
+           width: 500.0,
+        // child: Stack(
+        //   Draggable<Map>(
+        //     child:_buildFaceUpCard(),
+        //     feedback: PlayerHand,
+        //     cards: widget.attachedcards
+        //   )
+        //   children: <Widget>[
+        //
+        //   ]
+        //)
       )
     );
   }
 
   Widget _buildPlayedDeck(){
 
+  }
+  Widget _currentPlayerHand(){
+    player1Hand;
   }
 
   noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
@@ -79,13 +85,13 @@ class _gameState extends State<game> {
     var noPlayers = 3;
 
     //init player hands
-    player1Hand = [];
-    player2Hand = [];
-    player3Hand = [];
-    player4Hand = [];
-    player5Hand = [];
-    player6Hand = [];
-    played = [];
+    // player1Hand = [];
+    // player2Hand = [];
+    // player3Hand = [];
+    // player4Hand = [];
+    // player5Hand = [];
+    // player6Hand = [];
+    // played = [];
 
     Random rand = Random();
     List<PlayingCard> deck = [];
