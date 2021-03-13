@@ -14,7 +14,7 @@ class CardBack extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
         child: Container(
           color: Colors.white,
-          height: 110,
+          height: 100,
           width: 70,
           child: Image.asset('lib/images/back.png'),
         )

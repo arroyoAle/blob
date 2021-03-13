@@ -20,7 +20,7 @@ class CardTemplate extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(5),
               color: Colors.white,
-              height: 110,
+              height: 100,
               width: 70,
               child: Center(
                 child: Column(

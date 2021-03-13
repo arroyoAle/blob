@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:blob/blccard.dart';
 import 'package:blob/blccardtemplate.dart';
 import 'package:blob/blcsuits.dart';
+import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -39,47 +40,89 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         elevation: 0.0,
       ),
       backgroundColor: Colors.green,
-      body: Center(
-        child: Container(child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Align(
+        child: Container(child: Stack(
+          alignment: Alignment.center,
           children: [
-           Row(
-             mainAxisAlignment: MainAxisAlignment.center,
-            children: [CardTemplate(
-              suit: heart(),
-              colour: Colors.red,
-              number: '7',
-            ), CardTemplate(
-              suit: diamonds(),
-              colour: Colors.red,
-              number: '7',
-            )],
-           ),
-           Transform.rotate(angle: pi/2, child: CardBack(),),
-            Row(
+          //  Row(
+          //    mainAxisAlignment: MainAxisAlignment.center,
+          //   children: [CardTemplate(
+          //     suit: heart(),
+          //     colour: Colors.red,
+          //     number: '7',
+          //   ), CardTemplate(
+          //     suit: diamonds(),
+          //     colour: Colors.red,
+          //     number: '7',
+          //   )],
+          //  ),
+         Container(
+           alignment: Alignment.center,
+           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+            children: [Transform.rotate(angle: pi/2, child: CardBack(),),]
+          ),
+        ),
+          Container(
+            alignment: Alignment.bottomCenter,
+           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [CardTemplate(
-                suit: club(),
-                colour: Colors.black,
-                number: '7',
-              ), CardTemplate(
-                suit: spade(),
-                colour: Colors.black,
-                number: '7',
-              ),
-                getFlippingCard(spade(), Colors.black, '7'),
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                getFlippingCard(heart(), Colors.red, 'A'),
+                getFlippingCard(club(), Colors.black, '8'),
+                getFlippingCard(spade(), Colors.black, '10')
               ],
-            )
+             ),
+            ),
+         Container(
+           alignment: Alignment.centerLeft,
+           child: Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+             crossAxisAlignment: CrossAxisAlignment.end,
+             children: [Transform.rotate(angle: pi/2, child: CardBack(),)
+              ],
+             ),
+          ),
+          Container(
+            alignment: Alignment.centerRight,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [Transform.rotate(angle: pi/2, child: CardBack(),)
+              ],
+            ),
+          ),
+          Container(
+            alignment: Alignment.topCenter,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [Transform.rotate(angle: pi, child: CardBack(),)
+              ],
+            ),
+          ),
+          Container(
+            alignment: Alignment.centerLeft,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [Transform.rotate(angle: pi/2, child: CardBack(),)
+              ],
+            ),
+           ),
           ],
-        ))
-      )
+         ),
+        ),
+       ),
     );
   }
 
   Widget getFlippingCard(var suit, var colour, var number){
     return Transform(
       alignment: FractionalOffset.center,
-      transform: Matrix4.identity()..setEntry(3, 2, 0.002)..rotateY(pi * _animation.value),
+      transform: Matrix4.identity()..setEntry(0, 1, 0)..rotateY(pi * _animation.value),
       child: GestureDetector(
         onTap: () {
           if(_animationStatus == AnimationStatus.dismissed){
