@@ -11,9 +11,8 @@ class scoreboard extends StatelessWidget {
     List<Container> rows = [];
     // List<Container> rows = [];
 
-
     rows.add(Container(
-      height: 200,
+      alignment: AlignmentDirectional.center,
       child: Text('Round', style: TextStyle(fontSize: 12),),
       decoration: BoxDecoration(
           border: Border.all(color: Colors.black)
@@ -22,11 +21,12 @@ class scoreboard extends StatelessWidget {
 
     for (int i = 1; i <= numPlayers; i++) {
       rows.add(Container(
+        alignment: AlignmentDirectional.center,
         child: Text(
-            'Player' + i.toString(),
+            'Player ' + i.toString(),
             style: _isScoreboardVisible ? TextStyle(
-                color: Colors.black, fontSize: 10) : TextStyle(
-                color: Colors.transparent, fontSize: 10)
+                color: Colors.black, fontSize: 12) : TextStyle(
+                color: Colors.transparent, fontSize: 12)
         ),
         decoration: BoxDecoration(
             border: Border.all(color: Colors.black)
@@ -34,12 +34,9 @@ class scoreboard extends StatelessWidget {
       ));
     }
 
-
-
-
     for(int i = 7; i > 0; i--) {
       rows.add(Container(
-        alignment: AlignmentDirectional.topCenter,
+        alignment: AlignmentDirectional.center,
         child: Text(i.toString(), style: TextStyle(fontSize: 10)),
         decoration: BoxDecoration(
             border: Border.all(color: Colors.black)
@@ -56,7 +53,7 @@ class scoreboard extends StatelessWidget {
 
     for(int i = 1; i < 8; i++) {
       rows.add(Container(
-        alignment: Alignment.topCenter,
+        alignment: Alignment.center,
         child: Text(i.toString(), style: TextStyle(fontSize: 10)),
         decoration: BoxDecoration(
             border: Border.all(color: Colors.black)
@@ -72,6 +69,7 @@ class scoreboard extends StatelessWidget {
     }
 
     rows.add(Container(
+      alignment: AlignmentDirectional.center,
       child: Text('Blobs', style: TextStyle(fontSize: 12),),
       decoration: BoxDecoration(
           border: Border.all(color: Colors.black)
@@ -87,6 +85,7 @@ class scoreboard extends StatelessWidget {
     }
 
     rows.add(Container(
+      alignment: AlignmentDirectional.center,
         child: Text('Tricks', style: TextStyle(fontSize: 12),),
       decoration: BoxDecoration(
           border: Border.all(color: Colors.black)
@@ -130,6 +129,7 @@ class scoreboard extends StatelessWidget {
     // ),);
 
     return Center (
+      heightFactor: 1.1,
         child: AnimatedContainer (
             duration: Duration(seconds: 1),
             color: Colors.white,
