@@ -1,6 +1,8 @@
 import 'package:blob/blccard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:blob/scoreboard.dart';
+import 'package:blob/util.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _isScoreboardVisible = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,22 +22,41 @@ class _HomePageState extends State<HomePage> {
       ),
       backgroundColor: Colors.green,
       body: Center(
-        child: Container(child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(children: <Widget>[
+          Container(child: Stack(
+          // mainAxisAlignment: MainAxisAlignment.center,
+            alignment: AlignmentDirectional.center,
           children: [
-           Row(
-            children: [
-              MyCard(),
-           MyCard()
-          ],
-           ),
             Row(
               children: [
                 MyCard(),
-            MyCard()
-            ],)
+                MyCard()
+              ],
+            ),
+            Row(
+              children: [
+                MyCard(),
+                MyCard()
+              ],
+            ),
+              Positioned(
+                left: displayWidth(context) - 100,
+                top: -19,
+                child: TextButton(
+                  child: Text('Scoreboard', style: TextStyle(color: Colors.black)),
+                  onPressed: () {
+                    setState(() {
+                      _isScoreboardVisible = !_isScoreboardVisible;
+                    });
+                    },
+                ),
+              ),
+            scoreboard(_isScoreboardVisible)
           ],
-        ))
+          ),
+          ),
+        ],
+        )
       )
     );
   }
