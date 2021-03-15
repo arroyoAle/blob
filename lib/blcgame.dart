@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:blob/blccard.dart';
 import 'package:blob/blccardtemplate.dart';
+import 'package:blob/blcplay.dart';
 import 'package:blob/blcsuits.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
@@ -40,7 +41,13 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         elevation: 0.0,
       ),
       backgroundColor: Colors.green,
-      body: Align(
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: (){
+      //   Navigator.push(context, new MaterialPageRoute(builder: (context)=>GameView()));
+      // },
+      //   child: CardBack(),
+      // ),
+      body: Align( // this is the code for the start screen, with the formatting
         child: Container(child: Stack(
           alignment: Alignment.center,
           children: [
@@ -59,9 +66,21 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
          Container(
            alignment: Alignment.center,
            child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-            children: [Transform.rotate(angle: pi/2, child: CardBack(),),]
+               mainAxisAlignment: MainAxisAlignment.center,
+               crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ElevatedButton(
+                  child: CardBack(),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.green,
+                    elevation: 0,
+                  ),
+                  onPressed:(){
+                   Navigator.push(context, new MaterialPageRoute(builder: (context)=>GameView()));
+                  }
+                  ),
+              //CardBack()
+            ]
           ),
         ),
           Container(
@@ -77,15 +96,17 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
              ),
             ),
          Container(
+           padding: const EdgeInsets.all(15.0),
            alignment: Alignment.centerLeft,
            child: Row(
-             mainAxisAlignment: MainAxisAlignment.center,
+             mainAxisAlignment: MainAxisAlignment.start,
              crossAxisAlignment: CrossAxisAlignment.end,
              children: [Transform.rotate(angle: pi/2, child: CardBack(),)
               ],
              ),
           ),
           Container(
+            padding: const EdgeInsets.all(15.0),
             alignment: Alignment.centerRight,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -95,6 +116,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             ),
           ),
           Container(
+            padding: const EdgeInsets.all(2.0),
             alignment: Alignment.topCenter,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -102,20 +124,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               children: [Transform.rotate(angle: pi, child: CardBack(),)
               ],
             ),
-          ),
-          Container(
-            alignment: Alignment.centerLeft,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [Transform.rotate(angle: pi/2, child: CardBack(),)
-              ],
-            ),
            ),
           ],
          ),
         ),
-       ),
+      ),
     );
   }
 
@@ -140,5 +153,210 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       ),
     );
   }
+  // void _initGame() {
+  //   //Number of rounds
+  //   var round = 7;
+  //   var noPlayers = 3;
+  //
+  //   //init player hands
+  //   // player1Hand = [];
+  //   // player2Hand = [];
+  //   // player3Hand = [];
+  //   // player4Hand = [];
+  //   // player5Hand = [];
+  //   // player6Hand = [];
+  //   // played = [];
+  //
+  //   Random rand = Random();
+  //   List<PlayingCard> deck = [];
+  //   CardSuit.values.forEach((suit) {
+  //     CardType.values.forEach((type) {
+  //       deck.add(PlayingCard(
+  //         cardType: type,
+  //         cardSuit: suit,
+  //         faceUp: false,
+  //       ));
+  //     });
+  //   });
+  //   for (int i = 0; i < round * noPlayers; i++) {
+  //     int randNum = rand.nextInt(deck.length);
+  //     if (noPlayers == 3){
+  //
+  //       if (i % noPlayers == 0) {
+  //         PlayingCard card = deck[randNum];
+  //         player3Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 1) {
+  //         PlayingCard card = deck[randNum];
+  //         player2Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 2) {
+  //         PlayingCard card = deck[randNum];
+  //         player1Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //
+  //     } else if(noPlayers == 4){
+  //
+  //       if (i % noPlayers == 0) {
+  //         PlayingCard card = deck[randNum];
+  //         player4Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 1) {
+  //         PlayingCard card = deck[randNum];
+  //         player3Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 2) {
+  //         PlayingCard card = deck[randNum];
+  //         player2Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 3) {
+  //         PlayingCard card = deck[randNum];
+  //         player1Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //
+  //     } else if(noPlayers == 5){
+  //
+  //       if (i % noPlayers == 0) {
+  //         PlayingCard card = deck[randNum];
+  //         player5Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 1) {
+  //         PlayingCard card = deck[randNum];
+  //         player4Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 2) {
+  //         PlayingCard card = deck[randNum];
+  //         player3Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 3) {
+  //         PlayingCard card = deck[randNum];
+  //         player2Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 4) {
+  //         PlayingCard card = deck[randNum];
+  //         player1Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //
+  //     } else if(noPlayers == 6){
+  //
+  //       if (i % noPlayers == 0) {
+  //         PlayingCard card = deck[randNum];
+  //         player6Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 1) {
+  //         PlayingCard card = deck[randNum];
+  //         player5Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 2) {
+  //         PlayingCard card = deck[randNum];
+  //         player4Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 3) {
+  //         PlayingCard card = deck[randNum];
+  //         player3Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 4) {
+  //         PlayingCard card = deck[randNum];
+  //         player2Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //       if (i % noPlayers == 5) {
+  //         PlayingCard card = deck[randNum];
+  //         player1Hand.add(
+  //           card
+  //             ..opened = true
+  //             ..faceUp = true,
+  //         );
+  //         deck.removeAt(randNum);
+  //       }
+  //
+  //     }
+  //   }
+  //
+  // }
 }
 
