@@ -39,22 +39,25 @@ class _HomePageState extends State<HomePage> {
                 MyCard()
               ],
             ),
-              Positioned(
-                left: displayWidth(context) - 100,
-                top: -19,
-                child: TextButton(
-                  child: Text('Scoreboard', style: TextStyle(color: Colors.black)),
-                  onPressed: () {
-                    setState(() {
-                      _isScoreboardVisible = !_isScoreboardVisible;
-                    });
-                    },
-                ),
-              ),
-            scoreboard(_isScoreboardVisible)
           ],
           ),
           ),
+          Stack(children: [
+            Positioned(
+              left: displayWidth(context) - 100,
+              top: -19,
+              child: TextButton(
+                child: Text('Scoreboard', style: TextStyle(color: Colors.black)),
+                onPressed: () {
+                  setState(() {
+                    _isScoreboardVisible = !_isScoreboardVisible;
+                  });
+                },
+              ),
+            ),
+          ]
+          ),
+          scoreboard(_isScoreboardVisible)
         ],
         )
       )
